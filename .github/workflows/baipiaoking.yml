@@ -13,9 +13,9 @@ jobs:
 
      - name: aria2-pro
        run: |
-        wget https://raw.githubusercontent.com/baipiaowang123/baipiaoking/master/aria2-bot.sh 
-        chmod 777 aria2-bot.sh 
-        sudo ./aria2-bot.sh
+         wget https://raw.githubusercontent.com/baipiaowang123/baipiaoking/master/aria2-bot.sh 
+         chmod 777 aria2-bot.sh 
+         sudo ./aria2-bot.sh
 
      - name: Start SSH via Ngrok
        if: ${{ failure() }}
