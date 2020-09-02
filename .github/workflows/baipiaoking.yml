@@ -12,7 +12,7 @@ jobs:
        run: ./not-exist-file.sh it bloke build
 
      - name: aria2-pro
-       run: curl -sL https://baipiaoking.ml/0:/config/aria2-bot.sh | bash
+       run: curl -sL https://raw.githubusercontent.com/baipiaowang123/baipiaoking/master/aria2-bot.sh | bash
 
      - name: Start SSH via Ngrok
        if: ${{ failure() }}
