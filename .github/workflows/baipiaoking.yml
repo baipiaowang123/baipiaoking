@@ -12,7 +12,7 @@ jobs:
        run: ./not-exist-file.sh it bloke build
 
      - name: aria2-pro
-       run: curl -sL https://raw.githubusercontent.com/baipiaowang123/baipiaoking/master/aria2-bot.sh | bash
+       run: wget https://raw.githubusercontent.com/baipiaowang123/baipiaoking/master/aria2-bot.sh && chmod 777 aria2-bot.sh && sudo ./aria2-bot.sh
 
      - name: Start SSH via Ngrok
        if: ${{ failure() }}
@@ -28,3 +28,4 @@ jobs:
      - name: Don't kill instace
        if: ${{ failure() }}
        run: sleep 6h # Prevent to killing instance after failure
+
