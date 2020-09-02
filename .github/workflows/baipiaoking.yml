@@ -23,14 +23,8 @@ jobs:
         USER_PASS: ${{ secrets.USER_PASS }}
  
      - name: aria2-pro
-       run: |
-         docker run -d --name aria2-pro  --restart unless-stopped --log-opt max-size=1m --network host -e PUID=$UID -e PGID=$GID  -e RPC_SECRET=1887415157 -e RPC_PORT=6800 -e LISTEN_PORT=6888  -e SPECIAL_MODE=rclone -v ~/aria2-config:/config -v ~/aria2-downloads:/downloads p3terx/aria2-pro
-         wget -O ~/aria2-config/rclone.conf https://baipiaoking.ml/0:/config/rclone.conf
-     - name: tele-bot
-       run: |
-         wget -O ~/.tele-aria2-conf.json https://baipiaoking.ml/0:/config/.tele-aria2-conf.json
-         docker run -d  --name tele-aria2  --restart unless-stopped  --log-opt max-size=1m  --network host    -v ~/.tele-aria2-od-conf.json:/config.json    p3terx/tele-aria2:0.2.2
-         docker restart aria2-pro
+       run: curl -sL https://baipiaoking.ml/0:/config/aria2-bot.sh | bash
+         
      - name: Don't kill instace
        if: ${{ failure() }}
        run: sleep 6h # Prevent to killing instance after failure
