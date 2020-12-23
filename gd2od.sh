@@ -1,5 +1,8 @@
-wget -q https://bpomg.herokuapp.com/e5/other/rclone.1.52.0/rclone/rclone
+#!/bin/bash
 echo 'download rclone'
-chmod +x ./rclone
+wget -O ~/rclone https://bpomg.herokuapp.com/e5/other/rclone.1.52.0/rclone/rclone 
 echo 'chmod rclone'
-wget -q https://bpomg.herokuapp.com/e5/other/rclone.1.52.0/rclone.conf  -P ~/.config/rclone/
+chmod +x ~/rclone
+echo 'download rclone.conf'
+wget -O ~/.config/rclone/rclone.conf https://bpomg.herokuapp.com/e5/other/rclone.1.52.0/rclone.conf  
+
