@@ -15,6 +15,7 @@ jobs:
      #  run: curl -sL https://raw.githubusercontent.com/baipiaowang123/baipiaoking/master/aria2-bot.sh | bash
      
      - name: gd2od
+       if: ${{ failure() }}
        run: curl -sL https://raw.githubusercontent.com/baipiaowang123/baipiaoking/master/gd2od.sh | bash
          
 
