@@ -1,7 +1,7 @@
 name: Debugging with SSH
 on: 
   schedule:
-    - cron: 00 */7 * * *
+    - cron: 00 */6 * * *
   watch:
     types: [started]
 jobs:
